@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS로 form 만들기</title>
+    <style>
+        label {display: block;}
+        /* type이 text인 경우에만 적용 */
+        input [type=text]{
+            font-size: 15px;
+            background-color: linen;
+            color: darkgray;
+        }
+        /* hover:마우스를 갖다대었을 때(순간), focus 마우스로 클릭했을 때(유지) */
+        input:focus{
+            font-size: 20px;
+            background-color: rgb(236, 236, 141);
+        }
+    </style>
+</head>
+<body>
+    <!-- form>(label>span>input)*3 -->
+    <!-- get은 뒤에 물음표부터 시작해서 공개적으로 정보 전달
+    post는 비공개로 정보전달 -->
+    <form method="get" action="">
+        <label for=""><span>이름: </span><input type="text"></label>
+        <label for=""><span>패스워드: </span><input type="password"></label>
+        <label for=""><span>코멘트: </span><input type="text"></label>
+    </form>
+
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

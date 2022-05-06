@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 정보 입력</title>
+</head>
+<body>
+    <h2>사용자 정보 입력 페이지</h2>
+    <form name="fo" method="GET" action="http://search.naver.com/search.naver">
+        검색어: <input type="text" size=15 name="query"><br>
+        추가 파라미터: <input type="password" name="pass"><br>
+        <input type="submit" value="검색"><br>
+    </form>
+    <hr>
+    <h2>나만의 일기장 페이지</h2>
+    <form>
+        제목: <input type="text"><br>
+        날짜: <input type="date"><br>
+        시간: <input type="datetime-local"><br>
+        날씨: <input type="checkbox" name="we">맑음
+        <input type="checkbox" name="we">흐림
+        <input type="checkbox" name="we">비
+        <input type="checkbox" name="we">눈<br>
+        비밀번호: <input type="password"><br>
+        내용: <textarea cols=50 rows=10></textarea>
+        <input type="submit" value="저장하기">
+        <input type="reset" value="취소하기">
+        <input type="button" value="버튼">
+        <button type="button">버튼2</button>
+
+        <input type="file" value="사진업로드"><br>
+        <input type="color" value=#00FF00>
+
+        <select>
+            <option>한식</option>
+            <option>중식</option>
+            <option>일식</option>
+        </select>
+    </form>
+</body>
+</html>

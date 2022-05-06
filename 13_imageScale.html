@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scaling</title>
+    <style>
+        /* div에 에니메이션 넣는 방법 1 */
+        @keyframes zoom {
+            from{background-size: 200px 200px;}
+            to{background-size: 230px 230px;}
+        }
+        div {
+            width: 200px; height: 200px;
+            border: 2px solid red;
+            /* 사진 위에 글씨를 쓸 수 있음 */
+            background-image: url("media/covid19.jpg");
+            background-size: 200px 200px;
+            background-position: center center;
+            transition: background-size 2s;
+        }
+        img {border: 2px dotted blue;}
+        img:hover{
+            width: 230px; height: 230px;
+        }
+        div:hover {
+            /* 에니메이션 넣는 방법1-1 
+            animation-name: zoom;
+            animation-duration: 2s;*/
+            background-size: 230px 230px;
+        }
+    </style>
+</head>
+<body>
+    <h2>image scailing</h2>
+
+    <div>test</div>
+    <!-- 사진위에 글씨를 쓸 수 없음 -->
+    <img src=media/covid19.jpg height="200" width="200">
+    <hr>
+</body>
+</html>

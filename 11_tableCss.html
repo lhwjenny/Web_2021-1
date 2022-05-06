@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS로 표 만들기</title>
+    <style>
+        table{
+            /* border: 2px solid green; */
+            /* 단일테두리 */
+            border-collapse: collapse;
+        }
+        /* 적용범위 알아보기 */
+        tfoot th, td{
+            border-bottom: 2px dotted yellow;
+            width: 100px; height: 50px;
+            /* 텍스트 정렬 */
+            text-align: center;
+        }
+        thead th{
+            background-color: grey;
+        }
+        tbody tr:nth-child(odd){
+            background-color: lightslategray;
+        }
+        tr:hover{
+            /* 앞에 쓰인 것보다 우선순위가 밀려버림 
+            background-color: red;*/
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- table>thead>tr>th{title}*3 -->
+    <table>
+        <thead>
+            <tr>
+                <th>title</th>
+                <th>title</th>
+                <th>title</th>
+            </tr>
+        </thead>
+        <!-- 세칸씩 다섯줄, th와 td의 차이는 글자 굵기, 정렬 (th>td) -->
+        <!-- tbody>(tr>td{100}*3)*5 -->
+        <tbody>
+            <tr>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+        </tbody>
+        <!-- tfoot>tr>th{100}*3 -->
+        <tfoot>
+            <tr>
+                <th>100</th>
+                <th>100</th>
+                <th>100</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 맞추기 게임(랜덤 숫자, 몇번 시도 끝에 맞췄는지)</title>
+</head>
+<body>
+    <script>
+        // floor는 수를 정수로 만드는 것
+        //var answer = Math.floor(Math.random() * 100);
+        var answer = 68;
+        var count = 0;
+        while(true) {     //무한 루프
+            var input = prompt("숫자를 입력하세요.");
+            count++;
+            // prompt는 문자열 입력 함수. 나중에 형식이 바뀌기는 하나 확실히 하기 위해 정수로 바꿔주어야 함.
+            var guess = parseInt(input); //"35piuy87yiu65" --> 35
+            
+            if ( answer > guess ) {
+                alert("정답은 더 큰 수 입니다.");
+            } 
+            else if ( answer < guess ) {
+                alert("정답은 더 작은 수 입니다."); //alert는 창을 띄우는 것
+            }
+            else {
+                document.write("정답입니다. <br>"); //document.write는 웹브라우저에 띄워주는 것
+                document.writeln("정답은 " + answer + " 입니다. <br>" );
+                document.write(count + "번 만에 정답을 맞췄군요. <br>");
+                break;
+            }
+        }    
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+body {background-color: lightsalmon;}
+h2 {background-color: plum;}
+h2.menu1 {color: skyblue;}
+/* 꺾쇠는 그 하위임을 알려주는 것 */
+.menu1>li#sel1 {background-color: pink;}
+div>strong {background-color: darkgray;}
+ul{background-color: lavender;}
+
+.perfect {
+    /*선 굵기 - 글자색 - 배경 - 폰트 굵기 - 폰트 사이즈 - 글자 배치 - 글자 선*/
+    border: 3px double red; 
+    color: lightskyblue;
+    background:maroon;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: line-through;
+}
+/*even/2n 짝수번째 자식만, odd/2n+1 홀수번째 자식만*/
+.menu3>li:nth-child(2n+1) {
+    background-color: mediumaquamarine;
+}
+/* 가상클래스 */
+li:hover {
+    background-color: lightgray;
+    border: 1px solid blue;
+}
+
+input[type="text"]{
+    /* 색 입력 방법: 영어(ivory), 16진수(#ff00ff), 직접 선택(23, 104, 234) */
+    background-color: ivory;
+    text-align: right;
+    display: block;
+}
+/* :active --> 눌렀을 때만 font-weight 반응 
+   :focus--> 클릭하고 font-weight 유지*/
+input:focus {
+    font-size: 20pt;
+    font-weight: 900;
+}
+
+/* text-indent : 들여쓰기
+text-align : 정렬
+text-decoration : 텍스트 꾸미기 */
+
+.dok {
+    font:50px 'East Sea Dokdo', cursive;
+    font-weight: 900;
+}
+
+.first>li{
+    display: inline;
+    /* ↓굵기, 선 종류, 색깔↓ */
+    border:3px dashed green;
+    /* 위, 오른쪽, 아래, 왼쪽 순 (시계 방향)
+       만약 왼쪽이 없으면 오른쪽과 동일한 것=마주본 변의 마진 가져옴
+       ↓하나를 쓰면 전부 동일하게↓*/
+    margin: 50px 40px; /* 외부 */
+    padding: 10px; /* 내부 */
+    border-radius: 60px 0px; /* 곡률 */
+}
+
+.newstyle {
+    color:lime;
+    background-color: lightslategray;
+    font-size: 25px;
+    border: 2px outset lightpink;
+    margin: 20px; /* <외부에서의 영역 차이> */
+    padding: 15px; /* <경계선에서부터 글자까지의 영역> */
+    border-radius: 5px;
+}
+
+.newstyle:hover{
+    border: 5px inset lightpink;
+    border-style: inset;
+}
+
+/* 배경이기 때문에 이 위에 글씨를 쓸 수 있음 */
+.back {
+    width: 300px;
+    height: 300px;
+    border: 2px solid red;
+    background-image: url("media/couple.png");
+    background-repeat: repeat-x;
+    background-position: center center;
+    background-size: 300px 300px;
+    transition: background-size 300ms;
+}
+
+.back:hover {
+    background-size: 350px 350px;
+}
+img{
+    transition: width 1s;
+}
+img:hover {
+    width: 350px;
+    height: 350px;
+}
+
+h4 {
+    width: 300px;
+    height: 130px;
+    border: 2px solid lightgray;
+    background-color: lightgreen;
+    color: black;
+    font-size: 25px;
+    color: lightgreen;
+    text-shadow: 0px 0px 2px grey, 
+                 5px 5px 5px green;
+    box-shadow: 0px 0px 2px grey, 
+                5px 5px 5px green;
+    cursor: wait;
+}

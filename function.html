@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function 응용하기</title>
+    <style>
+        div {border:1px solid plum;
+        background-color: pink;
+        color: aqua;}
+    </style>
+</head>
+<body>
+    <script>
+        // int adder(int a, int b) {
+        //     return a + b;
+        // }
+
+        function adder(a, b) {
+            return a + b;
+        }
+
+        var sub = function(a, b) {
+            return a - b;
+        };        //이름 없는 익명함수. 대신에 변수를 저장해놓음(그러면 활용범위 넓음)
+
+        var result = adder(10, 20);
+        result = sub(19, 20);
+
+        var arr = new Array();
+        arr[10] = "hello";
+        arr[0] = 23;
+        arr[1] = 245.43;
+        arr[2] = function() {return "i'm function"};
+        arr[3] = sub;
+        arr.push("world");
+
+        var aaa = {
+            id : 100001,
+            name: "jeong",
+            kor: 100,
+            eng: 89,
+            math: 74,
+            avg: function() {
+                return (this.kor + this.eng + this.math) / 3;
+            }
+        };
+
+        function Student(id, na, k, e, m){ //객체 생성자 함수
+            this.id = id;
+            this.name = na;
+            this.kor = k;
+            this.eng = e;
+            this.math = m;
+            //this.avg = function() {};
+        }; // a = new Array(10)
+
+        //이 방법은 여러개를 만들어도 한개만 있으면 쓸 수 있음
+        Student.prototype.avg = function() {
+            return ((this.kor + this.eng + this.math) / 3);
+        }
+        Student.prototype.toString = function() {
+            var str;
+            str = "<div>ID : " + this.id + "<br>";
+            str += "NAME : " +this.name + "<br>";
+            str += "AVERAGE : " + this.avg() + "<br><div><hr>";
+            return str;
+        };
+
+        var bbb = new Student(10002, "seung", 100, 87, 21);
+        var list = new Array();
+        list.push(bbb); //list[0] = bbb;
+        list.push(new Student(10003, "do", 45, 78, 89));
+
+        // document.write(bbb.avg());
+        // document.write("<hr>");
+        // document.write(list[1].avg());
+        // document.write("<hr>");
+
+        //학생정보 출력
+        //document.write(list[0]);
+
+        //한번에 출력
+        for( i = 0; i < list.length; i++) {
+            document.write(list[i]);
+        }
+    </script>
+    
+</body>
+</html>

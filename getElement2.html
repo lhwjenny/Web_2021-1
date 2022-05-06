@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Control</title>
+    <style>
+        #wrap {
+            border:1px solid lime;
+            width: 300px; height: 300px;
+            background-size: 300px 300px;
+            background-image: url("media/Lighthouse.jpg");
+        }
+        li {display: inline;}
+        img {
+            border: 3px dotted red;
+        }
+    </style>
+    <script>
+        function change() {
+            var name = document.getElementById("sel").value; //Koala.jpg에 저장
+            var section = document.getElementById("wrap");
+            section.style.backgroundImage = "url('media/Koala.jpg" + name + "')";
+        }
+    </script>
+</head>
+<body>
+    <select id="sel">
+        <option value="media/Desert.jpg">desert</option>
+        <option value="media/Jellyfish.jpg">jellyfish</option>
+        <option value="media/Koala.jpg">koala</option>
+        <option value="media/Penguins.jpg">penguins</option>
+        <option value="media/Tulips.jpg">tulips</option>
+    </select>
+    <input type = "button" value="이미지 배경 변환" onclick="change()">
+    <div id="wrap">
+    </div>
+    <!-- 선택하는 숫자에 따라 달라지는 리스트 만들기 -->
+    <input type=text id= "num"> 
+    <input type="button" value="바꿔줘.." onclick="change2()">
+    <ul>
+        <li class="item" id="n1">"test"</li>
+        <li class="item" id="n2">"test"</li>
+        <li class="item" id="n3">"test"</li>
+        <li class="item" id="n4">"test"</li>
+        <li class="item" id="n5">"test"</li>
+    </ul>
+    <script>
+        function change2() {
+            var num = document.getElementById("num").value;
+            var input = "n" + num;
+            var target = document.getElementsByClassName("item"); //target[0] ~ target[4]
+            
+            //자동으로 클릭해주는 기능
+            setInterval(function () {
+            // 색을 랜덤화하는 과정
+            for(var i = 0; i < target.length; i++){ //for(var i in target) {}
+                var r = (Math.random()*255);
+                var g = (Math.random()*255);
+                var b = (Math.random()*255);
+
+                target[i].style.backgroundColor = "rgb(" + r +", "+ g + ", " + b + ")";
+                target[i].innerHTML = "changed";
+            }  
+            }, 1000);         
+        }
+    </script>
+
+    <input type ="button" id="btn" value="image show" onclick="imgShow()"> <!-- onclick="imgShow()" 온클릭이 필요한 상황 -->
+    <div id="imgWrap">
+        
+    </div>
+    <script>
+        window.onload = function() {        
+        var btn = document.getElementById("btn");
+        // btn.onclick = imgShow;
+        // btn.onclick = function () {
+        //     alert("이미지 띄웠음.");     //onclick은 중복사용하면 뒤에 것으로 덮어써짐       
+        // }
+        btn.addEventListener("click", imgShow);
+        btn.addEventListener("click", function () {
+            alert("이미지 띄웠음2");
+        });
+        btn.addEventListener("click", function(event){
+            event.target.style.color = "red";  //this, btn, 다 됨 --> function(){}일때
+        });
+    };
+        function imgShow() {
+            var newImg = document.createElement("img"); //html의 <img>태그와 같은 역할. 같은 방식으로 "div"면 <div>태그
+            
+            newImg.src = "media/Penguins.jpg";
+            newImg.setAttribute("width", "300px");
+            newImg.setAttribute("title", "귀여운 펭귄");
+            // <img src = "media/penguins.jpg" width="300px" title="귀여운 펭귄">과 같은 역할
+            var parents = document.getElementById("imgWrap");
+            parents.appendChild(newImg);
+        }
+    </script>
+</body>
+</html>

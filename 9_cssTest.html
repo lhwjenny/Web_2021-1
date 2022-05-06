@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 적용 본 수업</title>
+    <!-- 글자 사이트: fonts.google.com -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+
+
+    <!--첫번째 방법: <link href = "mystyle.css" type=text/css rel=stylesheet>-->
+    <style>
+        @import url("cssTest_1.css");
+    </style>
+</head>
+<body>
+    <!--DOM Tree
+        부모-자식-자손 순, 부모에서 아무리 많은 변경이 있더라도
+        자손에서 변경이 있으면 자손이 먼저
+        형제끼리는 먼저 쓴 순서로-->
+    <h2 class="menu1">첫 번째 제목</h2>
+    
+    <!--div>strong : div바로 밑에 strong이 있어야만-->
+    <div>
+        <strong class="dok">굵은 글씨</strong>
+    </div>
+    <!--div strong : div 밑 어디든 strong이 있기만하면 가능-->
+    <div>
+        <span>
+            <strong class="dok">굵은 글씨</strong>
+        </span>
+    </div>
+
+    <hr>
+    <h2 class="h2, dok">메뉴 리스트</h2>
+    <!--메뉴 리스트 만들기: (ul.menu$>li#sel${menu$}*5)*3-->
+    <ul class="menu1">
+        <li id="sel1">menu1</li>
+        <li id="sel2">menu2</li>
+        <li id="sel3">menu3</li>
+        <li id="sel4">menu4</li>
+        <li id="sel5">menu5</li>
+    </ul>
+    <ul class="menu2">
+        <li id="sel1">menu1</li>
+        <li id="sel2">menu2</li>
+        <li id="sel3" class="perfect">menu3</li>
+        <li id="sel4">menu4</li>
+        <li id="sel5">menu5</li>
+    </ul>
+    <ul class="menu3">
+        <li id="sel1">menu1</li>
+        <li id="sel2">menu2</li>
+        <li id="sel3">menu3</li>
+        <li id="sel4">menu4</li>
+        <!--개별적으로 작성할 style-->
+        <li id="sel5" style="color: ivory;font-size:18px;">menu5</li>
+    </ul>
+
+    <form>
+        이름: <input type="text" placeholder="이름 입력">
+        패스워드: <input type="password" placeholder="비밀번호"><br>
+        별명: <input type="text" placeholder="별명">
+    </form>
+
+    <a href = http://naver.com style="text-decoration: none;font-family: 'Dokdo', cursive;">네이버</a>
+    
+    <ul class="first">
+        <li>submenu1</li>
+        <li>submenu2</li>
+        <li>submenu3</li>
+        <li>submenu4</li>
+        <li>submenu5</li>
+    </ul>
+
+    <p class="newstyle">새로운 문장</p>
+
+    <p><div class=back>
+        test
+    </div></p>
+    
+    <!-- 배경이 아니기 때문에 이 위에 글을 쓸 수 없음 -->
+    <img src="media/couple.png" width="300" height="300">
+
+    <hr>
+    <h4>텍스트 그림자 효과</h4>
+
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+</body>
+</html>

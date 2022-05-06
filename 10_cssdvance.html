@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 고급 활용</title>
+    <style>
+        body{margin: 0px;}
+        div {
+            /* inline-block 방식은 inline의 특성(한줄에 들어감)과
+             block의 특성(사이즈 조절)을 전부 가지고 있음 */
+            color:lightpink;
+            background-color: rgb(150, 205, 240);
+            border: 1px solid grey;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+        }
+        span {
+            color:lightpink;
+            background-color: rgb(179, 235, 179);
+            border: 1px solid grey;
+            width: 300px;
+            height: 100px;
+            margin: 10px;
+            display: block;
+        }
+        .card:hover{
+            /* relative: 컨텐츠가 안쪽으로 들어가는 게 +임 (중앙으로 갈수록 +) */
+            position:relative;
+            left:10px;
+            top: 10px;
+            background-color: pink;
+        }
+        /* card3을 고정 */
+        .card3{
+            position: fixed;
+            right: 10px;
+            bottom:10px;
+        }
+        #float {
+            float: left;
+            margin: 10px;
+            visibility: visible;
+            overflow: scroll;
+        }
+    </style>
+    <style>
+        .card1:hover {
+            position: relative;
+            z-index:100;
+        }
+        .card2{
+            position: relative;
+            right: 100px;
+            top: 10px;
+        }
+        .card4{
+            position: relative;
+            right: 200px;
+            top: 20px;
+        }
+        .card2:hover{
+            position: relative;
+            z-index: 100;
+        }
+        .card4:hover{
+            position:relative;
+            z-index:100;
+        }
+    </style>
+    
+    <style>
+        /* <메뉴바 만들기> */
+        #menubar {
+            background : olive;
+        }
+        #menubar ul { /* 여백과 패딩 모두 0 */
+            margin : 0;
+            padding : 0;
+            width : 567px;  /* 모든 아이템(<li>)을 한 줄에 품을 수 있는 폭 */
+        }
+        #menubar ul li {
+            display : inline;	 /* 새 줄로 넘어가지 않게 */
+            list-style-type : none; 	/* 마커 삭제 : 확실히 해주기 위해 집어넣은것 없어도 상관x*/
+            padding : 0px 15px;	 /* top=bottom=0, left=right=15px */ 
+        }
+        #menubar ul li a {
+            color : white;
+            text-decoration : none; /* 링크 보이지 않게 */
+        }
+        #menubar ul li a:hover {
+            color : violet;  /* 마우스 올라 갈 때 색 */
+        }
+        </style>
+        <style>
+            /* 에니메이션 기능 */
+            @keyframes ani { /*에니메이션 정의*/
+                0% {font-size: 10px;color:red;left: 0px;}
+                to {font-size: 10px;color:blue;left: 100px;}
+            }
+            .my {
+                position: relative;
+                animation-name:ani;
+                animation-duration: 3s;
+                animation-iteration-count: 3;
+            }
+            .trans {
+                font-size: 20px;
+                color: lightsalmon;
+                /* <어떤 것에 대한 변화를 줄 것인지 선택> */
+                transition: font-size 5s;
+            }
+            .trans:hover{
+                font-size: 100px;
+            }
+        </style>
+</head>
+<body>
+    <section class="my">글자가 미쳤어요.</section>
+    <section class="trans">서서히 커져요.</section>
+
+    <div class="block1">블록 태그1</div>
+    <div class="block2">블록 태그1</div>
+    <div class="block3">블록 태그1</div>
+
+    <!-- span에 width height 적용이 안됨 -->
+    <span id = "span1">인라인 태그1</span>
+    <span id = "span2">인라인 태그2</span>
+    <span id = "span3">인라인 태그3</span>
+
+    <div>
+        블록-->인라인 <span>나는 인라인</span>
+        뒤에오는 문장
+    </div>
+    <span>
+        인라인-->블록 <div>나는 블록</div>
+        뒤에오는 문장
+    </span>
+
+    <hr>
+    <div class="card1">card1</div>
+    <div class="card2">card2</div>
+    <div class="card3">card3</div>
+    <div class="card4">card4</div>
+    <div class="card5">card5</div>
+    <br>
+
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est alias quae tenetur necessitatibus ea dolor fugiat, aliquid facilis maiores exercitationem reiciendis fugit accusamus id ipsum labore atque quia ex omnis.
+    <div id=float>dolor consectetur adipisicing elit. dolor consectetur adipisicing elit. dolor consectetur adipisicing elit.</div>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, expedita nobis, aliquid saepe tenetur laborum odio deserunt quae perferendis, cumque cupiditate voluptatum culpa dolores? In provident officia labore vel sed!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel hic a ea dolores enim, in fugiat omnis adipisci, vitae doloremque explicabo ex. In esse rem nisi sapiente eveniet architecto totam.
+
+    <hr style="border: 2px solid green;">
+    <nav id=menubar>
+        <ul>
+            <!-- ul>(li>a)*5 -->
+            <li><a href="#">Home</a></li>
+            <li><a href="https://search.naver.com/search.naver?query=에스프레소" target="info">Esppresso</a></li>
+            <li><a href="https://search.naver.com/search.naver?query=카푸치노" target="info">Cappucino</a></li>
+            <li><a href="https://search.naver.com/search.naver?query=카페라떼" target="info">Cafe Latte</a></li>
+            <li><a href="#">F.A.Q</a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+</body>
+</html>

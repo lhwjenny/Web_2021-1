@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Part3</title>
+    <style>
+        img {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h2>test Page</h2>
+    <div id="wrap">contents</div>
+    <script>
+        window.onload = function(){
+            document.getElementById("name").focus();
+        }
+    </script>
+    이름 : <input type="text" id="name" value="" onblur="check(this)"> <span id="info"></span> <br>
+    나이 : <input type="text">
+    <script>
+        function check(obj) { //obj = input type="text" id="name" value="" onblur="check(this)
+            if(obj.value == "") {
+                document.getElementById("info").innerHTML = "필수항목입니다.";
+                obj.focus();
+            }
+            else
+                document.getElementById("info").innerHTML = "";
+        }
+    </script>
+    <hr>
+    <form id="frm" method="get" action="http://www.naver.com">
+    <input type = "radio" name="city" value="Seoul">서울
+    <input type = "radio" name="city" value="Busan" checked>부산
+    <input type = "radio" name="city" value="Jeju">제주
+    <input type="button" value="확인" onclick="checkCity()">
+    <hr>
+    <script>
+        function checkCity() {
+            var cities = document.getElementsByName("city");
+            var cur = null;
+            for(var i in cities){
+                if(cities[i].checked == true) {
+                    cur = cities[i];
+                }
+            }
+            alert(cur.value);
+        }
+    </script>
+    <input type = "checkbox" name="p1" value="10000" onclick="cala(this)">모자 10000
+    <input type = "checkbox" name="p2" value="100000" onclick="cala(this)">가방 100000
+    <input type = "checkbox" name="p3" value="50000" onclick="cala(this)">안경 50000
+    <br>
+    총합: <input type="text" id="sum" value="0">
+    <hr>
+    <script>
+        var sum = 0;
+        function cala(obj) {
+            if(obj.checked == true){
+                sum += parseInt(obj.value);
+            }
+            else {
+                sum -= parseInt(obj.value);
+            }
+            document.getElementById("sum").value = sum;
+        }
+    </script>
+    <select id="sel" onchange="drawImage()">
+        <option value="media/Koala.jpg">코알라</option>
+        <option value="media/Desert.jpg">사막</option>
+        <option value="media/Penguins.jpg" selected>펭귄</option>
+    </select> <br>
+    <img src ="" width="300" height="400" id="image">
+    <script>
+        function drawImage() {
+            var sel = document.getElementById("sel");
+            var imgsrc = sel.options[sel.selectedIndex].value;   
+            var image = document.getElementById("image");
+            image.src = imgsrc; 
+            image.style.visibility = "visible";   
+
+            sel.selectedIndex = 2;
+        }
+    </script>
+    <input type="reset" value="초기화">
+    </form>
+
+    <script>
+        window.onload = function(){
+            var form = document.getElementById("frm");
+            frm.onreset = function() {
+                return false;
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Control</title>
+    <style>
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+    <div id="test" width="300px" style="color:red" onclick="">
+        나는 내용이에요
+    </div>
+    <script>
+        var a = document.getElementById("test");
+        a.id = "change";
+        a.width = "500px";
+        a.style.color = "blue";
+        a.style.backgroundColor = "yellow";
+        a.onclick = function() {
+            alert("확실합니까?");
+        };
+        a.innerHTML = "<hr>내용이 바뀌네. <hr>";
+    </script>
+</body>
+</html>
